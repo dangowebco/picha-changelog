@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Picha (ChangeLog) - Lite\n"
+"POT-Creation-Date: 2025-08-28 16:19+0330\n"
+"PO-Revision-Date: 2025-08-28 16:19+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Generator: Poedit 3.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: dw-picha-changelog-lite.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/enqueue.php:14 inc/metaboxes.php:75
+msgid "Add Log"
+msgstr "افزودن تغییر"
+
+#: inc/enqueue.php:15 inc/metaboxes.php:78
+msgid "Add Bulk Log"
+msgstr "افزودن تغییرات دسته جمعی"
+
+#: inc/enqueue.php:16 inc/metaboxes.php:80
+msgid "Put each item on a line."
+msgstr "هر مورد را در یک خط قرار دهید."
+
+#: inc/enqueue.php:17 inc/metaboxes.php:46
+msgid "Version"
+msgstr "نگارش"
+
+#: inc/enqueue.php:18 inc/metaboxes.php:87
+msgid "Description"
+msgstr "توضیحات"
+
+#: inc/enqueue.php:19
+msgid "Gregorian Date"
+msgstr "تاریخ میلادی"
+
+#: inc/enqueue.php:20 inc/metaboxes.php:53
+msgid "Jalali Date"
+msgstr "تاریخ شمسی"
+
+#: inc/enqueue.php:21 inc/functions.php:8 inc/metaboxes.php:100
+msgid "New"
+msgstr "جدید"
+
+#: inc/enqueue.php:22 inc/functions.php:22 inc/metaboxes.php:101
+msgid "Fixed"
+msgstr "رفع شد"
+
+#: inc/enqueue.php:23 inc/functions.php:10 inc/metaboxes.php:102
+msgid "Update"
+msgstr "بروزرسانی"
+
+#: inc/enqueue.php:24 inc/functions.php:12 inc/metaboxes.php:103
+msgid "Improvement"
+msgstr "بهبود"
+
+#: inc/enqueue.php:25 inc/functions.php:14 inc/metaboxes.php:104
+msgid "Remove"
+msgstr "حذف"
+
+#: inc/enqueue.php:26 inc/functions.php:16 inc/metaboxes.php:105
+msgid "Obsolete"
+msgstr "منسوخ"
+
+#: inc/enqueue.php:27 inc/functions.php:18 inc/metaboxes.php:106
+msgid "Compatibility"
+msgstr "سازگاری"
+
+#: inc/enqueue.php:28 inc/functions.php:20 inc/metaboxes.php:107
+msgid "Special"
+msgstr "ویژه"
+
+#: inc/metaboxes.php:10 inc/posttype.php:9 inc/posttype.php:10
+msgid "Changelog"
+msgstr "ثبت تغییرات"
+
+#: inc/metaboxes.php:18
+msgid "Changelog Options"
+msgstr "گزینه های ثبت تغییرات"
+
+#: inc/metaboxes.php:34
+msgid "Add New Version"
+msgstr "افزودن نگارش تازه"
+
+#: inc/metaboxes.php:63
+msgid "Date"
+msgstr "تاریخ"
+
+#: inc/metaboxes.php:83
+msgid "Add"
+msgstr "افزودن"
+
+#: inc/metaboxes.php:146
+msgid "Show Version"
+msgstr "نمایش نگارش"
+
+#: inc/metaboxes.php:154
+msgid "Show Jalali Date"
+msgstr "نمایش تاریخ شمسی"
+
+#: inc/metaboxes.php:162
+msgid "Show Gregorian date"
+msgstr "نمایش تاریخ میلادی"
+
+#: inc/metaboxes.php:170
+msgid "Show Description"
+msgstr "نمایش توضیحات"
+
+#: inc/metaboxes.php:174
+msgid "Template"
+msgstr "پوسته"
+
+#: inc/metaboxes.php:176
+msgid "Template 1"
+msgstr "پوسته 1"
+
+#: inc/metaboxes.php:177
+msgid "Template 2"
+msgstr "پوسته 2"
+
+#: inc/metaboxes.php:178
+msgid "Template 3"
+msgstr "پوسته 3"
+
+#: inc/metaboxes.php:179
+msgid "Template 4"
+msgstr "پوسته 4"
+
+#: inc/posttype.php:8
+msgid "Picha (Changelog)"
+msgstr "پیچا (Changelog)"
+
+#: inc/posttype.php:11 inc/posttype.php:12
+msgid "Add New Project"
+msgstr "افزودن پروژه تازه"
+
+#: inc/posttype.php:13
+msgid "Edit Log"
+msgstr "ویرایش تغییرات"
+
+#: inc/posttype.php:14
+msgid "Search Changelog"
+msgstr "جستجو تغییرات"
+
+#: inc/posttype.php:30
+msgid "ShortCode"
+msgstr "کد کوتاه"
+
+#: inc/shortcode.php:50
+msgid "Template file not found."
+msgstr "فایل قالب پیدا نشد."
+
+#: templates/template-1.php:21
+msgid "Version "
+msgstr "نگارش "
+
+#. Plugin Name of the plugin/theme
+msgid "DW Picha Changelog"
+msgstr "پیچا (Changelog)"
+
+#. Plugin URI of the plugin/theme
+msgid "https://dangoweb.ir/product/picha-wordpress-changelog-plugin/"
+msgstr "https://dangoweb.ir/product/picha-wordpress-changelog-plugin/"
+
+#. Description of the plugin/theme
+msgid ""
+"Picha is a WordPress plugin designed to showcase the changes in physical or "
+"digital products in the most engaging way possible for users."
+msgstr ""
+"پیچا یک افزونه وردپرس است که برای نمایش تغییرات در محصولات فیزیکی یا دیجیتال "
+"به جذاب‌ترین شکل ممکن برای کاربران طراحی شده است."
+
+#. Author of the plugin/theme
+msgid "Dango Web"
+msgstr "دانگو وب"
+
+#. Author URI of the plugin/theme
+msgid "https://dangoweb.ir/"
+msgstr "https://dangoweb.ir/"
+
+#~ msgid ""
+#~ "With this plugin, you can create a changelog for your product or "
+#~ "software. Picha is a WordPress plugin designed to showcase the changes in "
+#~ "physical or digital products in the most engaging way possible for users. "
+#~ "With Picha, the era of dry and boring changelogs is over. Software "
+#~ "developers, product managers, and website owners can now present their "
+#~ "updates and changes in an attractive, user-friendly format."
+#~ msgstr ""
+#~ "با استفاده از این افزونه، می‌توانید برای محصول یا نرم‌افزار خود یک گزارش "
+#~ "تغییرات ایجاد کنید. پیچا یک افزونه وردپرس است که برای نمایش تغییرات در "
+#~ "محصولات فیزیکی یا دیجیتال به جذاب‌ترین شکل ممکن برای کاربران طراحی شده "
+#~ "است. با پیچا، دوران گزارش‌های تغییرات خشک و کسل‌کننده به پایان رسیده است. "
+#~ "توسعه‌دهندگان نرم‌افزار، مدیران محصول و صاحبان وب‌سایت اکنون می‌توانند "
+#~ "به‌روزرسانی‌ها و تغییرات خود را در قالبی جذاب و کاربرپسند ارائه دهند."
+
+#~ msgid "Show Date"
+#~ msgstr "نمایش تاریخ"
+
+#~ msgid "Free Template"
+#~ msgstr "پوسته رایگان"
+
+#~ msgid "Wordpress Changelog Plugin"
+#~ msgstr "افزونه وردپرس Changelog"
+
+#~ msgid "Delete"
+#~ msgstr "حذف"
+
+#~ msgid "Add New"
+#~ msgstr "افزودن تازه"
+
+#~ msgid "Template 5"
+#~ msgstr "پوسته 5"
+
+#~ msgid "Added"
+#~ msgstr "اضافه شد"
+
+#~ msgid "Updated"
+#~ msgstr "بروزرسانی شد"
+
+#~ msgid "Improved"
+#~ msgstr "بهبود یافت"
+
+#~ msgid "Removed"
+#~ msgstr "حذف شد"
+
+#~ msgid "Deprecated"
+#~ msgstr "منسوخ شد"
+
+#~ msgid "Picha"
+#~ msgstr "پیچا"
+
+#~ msgid "New Log"
+#~ msgstr "تغییرات تازه"
+
+#~ msgid "Change Log"
+#~ msgstr "ثبت تغییرات"

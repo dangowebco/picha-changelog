@@ -1,0 +1,204 @@
+.dwp_shortcode {
+    min-width: 250px
+}
+
+#dwp_meta_box .inside {
+    background-color: #f6f7f7;
+    margin: 0;
+    padding: 10px;
+}
+
+.dw-add-new {
+    background-color: #7d848f;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.dw-delete-section,
+.dw-delete-row {
+    color: #f0342b;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dwp-box {
+    margin: 10px 0;
+    box-shadow: 0 2px 15px rgb(253 131 117 / 4%);
+}
+
+.dwp-header {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 1px 1px 0 0;
+    border-bottom: 1px solid #f1f1f1;
+    /*font-weight: bold;*/
+}
+
+.dwp-footer {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 0 0 1px 1px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.dwp-body {
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.dwp-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dwp-info>div {
+    display: flex
+}
+
+.dwp_description {
+    margin-top: 10px
+}
+
+.dwp_description label,
+.dwp-header label {
+    display: flex;
+    flex-direction: column;
+}
+
+.dwp-header label {
+    margin-left: 10px
+}
+
+.dwp-bulk-add-items,
+.dwp-add-bulk-log,
+.dwp-add-log {
+    background-color: #8ed557;
+    color: #fff;
+    box-shadow: 0 2px 15px rgb(253 131 117 / 4%);
+    cursor: pointer;
+    padding: 0.4em 1em;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.dwp-add-bulk-log {
+    background-color: #f0932b;
+}
+
+.dwp-bulk-area-wrapper {
+    display: none;
+    background-color: #f6f7f7;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.dwp-body-row {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dwp_description label,
+.dwp-body textarea {
+    width: 100%;
+}
+
+.dwp-body textarea,
+.dwp-body select,
+.dwp-body input,
+.dwp-header input {
+    width: 100%;
+    border: 1px solid #cbcbcb;
+    background-color: #ffffff;
+}
+
+.dwp-row-log {
+    flex-grow: 0;
+    flex-basis: 87%;
+    padding: 0 10px;
+}
+
+/*Checkbox*/
+.dwp-checkbox-wrapper {
+    margin: 10px 0
+}
+
+.dwp-checkbox {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dwp-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.dwp-checkbox input:checked~.dwp-checkmark {
+    background-color: #f0932b;
+}
+
+.dwp-checkbox input:checked~.dwp-checkmark:after {
+    left: 21px;
+}
+
+.dwp-checkbox:hover input~.dwp-checkmark {
+    background-color: #eee;
+}
+
+.dwp-checkbox:hover input:checked~.dwp-checkmark {
+    background-color: #8ed557;
+}
+
+.dwp-checkbox .dwp-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 40px;
+    background-color: #eee;
+    transition: background-color 0.25s ease;
+    border-radius: 11px;
+}
+
+.dwp-checkbox .dwp-checkmark:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: left 0.25s ease;
+}
+
+.dwp-checkbox .dwp-checkbox-label {
+    color: #333;
+    transition: color 0.25s ease;
+}
+
+.dwp-select-wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dwp-select-wrapper label {
+    margin-bottom: 5px
+}
