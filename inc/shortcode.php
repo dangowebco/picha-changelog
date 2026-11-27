@@ -1,58 +1,97 @@
 <?php
 if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly
+    exit;
 }
 
 add_action('init', function () {
-    add_shortcode('dwpicha313_shortcode', 'dwpicha313ShortcodeResultsLite');
+    add_shortcode('dwpicha313_shortcode', 'dwpicha313_shortcode_results');
 });
 
-function dwpicha313ShortcodeResultsLite($atts)
+/**
+ * Render the changelog shortcode output.
+ *
+ * @param array $atts
+ * @return string
+ */
+function dwpicha313_shortcode_results($atts)
 {
-    // Set default attributes and extract them
-    $atts = shortcode_atts(['id' => null], $atts);
+    $atts = shortcode_atts(['id' => 0], $atts, 'dwpicha313_shortcode');
 
-    // Check if 'id' is provided
-    if (!$atts['id']) {
-        return ''; // Return empty string if no ID is provided
+    $post_id = absint($atts['id']);
+    if (!$post_id) {
+        return '';
     }
 
-    // Get post meta data
-    $postMeta = maybe_unserialize(get_post_meta($atts['id'], '_dwp_changelog_options', true));
-    $change_logs = maybe_unserialize(get_post_meta($atts['id'], '_dwp_changelog', true));
-
-    // Check if change logs exist
-    if (!$change_logs) {
-        return ''; // Return empty string if no change logs are found
+    if (get_post_type($post_id) !== 'dw_picha_changelog') {
+        return '';
     }
 
-    // Start output buffering
-    ob_start();
-
-    // Prepare variables to pass to the template
-    $template_data = [
-        'change_logs' => $change_logs,
-        'change_options' => $postMeta, // Assuming this contains the options
-    ];
-
-    // Include the appropriate template file
-    if (isset($postMeta['template'])) {
-        $template_file = DWPICHA313_ROOT_LITE . 'templates/template-' . $postMeta['template'] . '.php';
-    } else {
-        $template_file = DWPICHA313_ROOT_LITE . 'templates/template-1.php';
+    $change_logs = maybe_unserialize(get_post_meta($post_id, '_dwp_changelog', true));
+    if (empty($change_logs) || !is_array($change_logs)) {
+        return '';
     }
 
-    // Check if the template file exists before including it
-    if (file_exists($template_file)) {
-        extract($template_data); // Extract variables for use in the template
-        include $template_file;
-    } else {
+    $change_options = maybe_unserialize(get_post_meta($post_id, '_dwp_changelog_options', true));
+    if (!is_array($change_options)) {
+        $change_options = [];
+    }
+
+    // Migration — removed
+    $template_slug = $change_options['template'] ?? '1';
+
+    $template_file = dwpicha313_locate_template($template_slug);
+    if (!$template_file) {
         return __('Template file not found.', 'dw-picha-changelog');
     }
 
-    // Get the buffered content and clean the buffer
-    $output = ob_get_clean();
+    // Enqueue frontend JS if needed (only timeline + accordion)
+    if (in_array($template_slug, ['3', '5'], true)) {
+        wp_enqueue_script(
+            'dwpichaFrontend',
+            DWPICHA_LITE_ASSETS . 'frontend.js',
+            [],
+            DWPICHA_LITE_VERSION,
+            true
+        );
+    }
 
-    // Return the output
-    return $output;
+    // Build appearance CSS
+    $appearance  = $change_options['appearance'] ?? [];
+    $appearance_css = dwpicha313_build_appearance_css($post_id, $appearance);
+
+    // Color mode class
+    $color_mode_class = '';
+    $color_mode = $appearance['color_mode'] ?? 'auto';
+    $has_custom = !empty($appearance['enabled']);
+
+    if ($has_custom) {
+        $color_mode_class .= ' dwpHasCustomColors';
+    }
+    if ($color_mode === 'dark') {
+        $color_mode_class .= ' dwpDark';
+    } elseif ($color_mode === 'light') {
+        $color_mode_class .= ' dwpForceLight';
+    } else {
+        $color_mode_class .= ' dwpAuto';
+    }
+
+    ob_start();
+    if ($appearance_css) {
+        echo '<style id="dwpicha-' . esc_attr($post_id) . '-css">' . $appearance_css . '</style>';
+    }
+?>
+    <div id="dwpicha-<?php echo esc_attr($post_id); ?>"
+        class="dwpichaWrapper<?php echo esc_attr($color_mode_class); ?>">
+        <?php include $template_file; ?>
+    </div>
+<?php
+    return ob_get_clean();
+}
+
+// Backward-compatible alias.
+if (!function_exists('dwpicha313ShortcodeResultsLite')) {
+    function dwpicha313ShortcodeResultsLite($atts)
+    {
+        return dwpicha313_shortcode_results($atts);
+    }
 }
