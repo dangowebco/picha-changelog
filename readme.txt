@@ -8,7 +8,7 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Create and display attractive changelogs for physical and digital products, software, and product updates. Organize version information, choose from multiple templates, customize colors, and display your changelog anywhere on your WordPress site using a shortcode. All features are available for free.
+Create and display attractive changelogs for products and software. 5 templates, custom colors, dark mode, RTL, and live preview. All features free.
 
 == Description ==
 
@@ -102,60 +102,16 @@ Yes. Picha Changelog is completely free, and all features are included. There is
 == Changelog ==
 
 = 2.3 =
-* Major release with redesigned templates and appearance settings.
-* Templates:
-  - Classic: Clean inline layout with colored status badges (merges old Templates 1 and 2).
-  - Modern Card: Card-based layout with accent bar and sub-cards (redesigned old Template 4).
-  - Timeline: Vertical timeline with connecting line and reveal-on-scroll animation (was Template 5 in v2.2).
-  - Minimal: Typography-first layout with no cards or shadows (new).
-  - Accordion: Collapsible layout using native <details>/<summary>, perfect for long changelogs (new).
-* Appearance settings (per changelog):
-  - Custom primary color, text color, and surface color.
-  - Color mode: Auto (follow system), Always Light, or Always Dark.
-  - Reset to defaults button.
-* Admin UI redesign:
-  - Card-based layout with drag handles for versions and log entries.
-  - Color-coded status dropdowns for quick visual scanning.
-  - Item counter per version.
-  - Sticky toolbar with version count.
-  - Empty-state hints for better onboarding.
-  - Responsive layout for tablets and mobile.
-  - Full RTL support using CSS logical properties.
-  - Improved accessibility (focus states, ARIA labels, button semantics).
-* Live Preview:
-  - Preview the rendered changelog before publishing.
-  - Modal with the selected template and appearance settings.
-* CSS variables:
-  - Customize colors and spacing without editing plugin files.
-  - Brand color (#f0932b) used as default accent.
-* Theme integration:
-  - Full RTL support.
-  - Dark mode (Auto / Always Light / Always Dark).
-  - Print-friendly styles for all templates.
-  - Reduced-motion support for animations.
-* Developer features:
-  - Theme template override (yourtheme/picha/template-N.php).
-  - REST API endpoint: GET /wp-json/picha/v1/changelog/{id}.
-* Security:
-  - Escaped all template output (description uses wp_kses_post()).
-  - Added null-coalescing checks for all meta array access.
-  - Replaced spoofable meta_box_flag with get_post_type() check.
-  - Added is_array() guard for dwp_option before array_map().
-* Fixed:
-  - Duplicate input names in bulk-add (itemIndex now increments correctly).
-  - Jalali datepicker now re-initializes after dynamic elements are added.
-  - Sortable rows preserve correct array indexes on save.
-  - Duplicate version now copies all items (not just the header).
-  - Auto dark mode now correctly applies on systems with dark preference.
-  - Custom colors now correctly override dark mode when enabled.
-* Improved:
-  - Standard load_plugin_textdomain() usage.
-  - All functions prefixed consistently with dwpicha313_.
-  - Assets are only loaded on the plugin screen.
-  - Backward-compatible aliases kept for v2.0 functions.
-* Removed:
-  - Old Template 3 (basic timeline) — replaced by Timeline.
-  - Old Template 5 (timeline v2.2) — moved to Template 3.
+* Redesigned the template system with 5 distinct templates: Classic, Modern Card, Timeline, Minimal, and Accordion.
+* Added per-changelog appearance settings: custom primary color, text color, surface color, and color mode (Auto, Light, Dark).
+* Redesigned the admin interface with a modern card-based layout, drag & drop sorting, color-coded statuses, and empty states.
+* Added live preview of the rendered changelog before publishing.
+* Added duplicate version, bulk add, and theme template override.
+* Added CSS variables for easy customization (default brand color #f0932b).
+* Added full RTL, dark mode, and print-friendly support.
+* Improved mobile layouts and accessibility across all templates.
+* Added REST API endpoint for accessing changelog data as JSON.
+* Various security and stability improvements.
 
 = 2.0 =
 * Made all previously Pro features available in the free version.

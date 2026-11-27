@@ -75,10 +75,23 @@ function dwpicha313_shortcode_results($atts)
         $color_mode_class .= ' dwpAuto';
     }
 
-    ob_start();
-    if ($appearance_css) {
-        echo '<style id="dwpicha-' . esc_attr($post_id) . '-css">' . $appearance_css . '</style>';
+    // Register appearance CSS for wp_head
+    $appearance = $change_options['appearance'] ?? [];
+    dwpicha313_register_appearance_css($post_id, $appearance);
+
+    // Color mode class
+    $color_mode_class = '';
+    $color_mode = $appearance['color_mode'] ?? 'auto';
+
+    if ($color_mode === 'dark') {
+        $color_mode_class = ' dwpDark';
+    } elseif ($color_mode === 'light') {
+        $color_mode_class = ' dwpForceLight';
+    } else {
+        $color_mode_class = ' dwpAuto';
     }
+
+    ob_start();
 ?>
     <div id="dwpicha-<?php echo esc_attr($post_id); ?>"
         class="dwpichaWrapper<?php echo esc_attr($color_mode_class); ?>">

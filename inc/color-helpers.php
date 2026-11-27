@@ -4,6 +4,33 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Register appearance CSS as inline style attached to the theme stylesheet.
+ * Uses wp_add_inline_style to avoid issues with ACF/shortcode-in-content.
+ *
+ * @param int   $post_id
+ * @param array $appearance
+ */
+function dwpicha313_register_appearance_css($post_id, $appearance)
+{
+    static $registered = [];
+
+    if (isset($registered[$post_id])) {
+        return;
+    }
+    $registered[$post_id] = true;
+
+    $css = dwpicha313_build_appearance_css($post_id, $appearance);
+    if (!$css) {
+        return;
+    }
+
+    // Print in wp_footer (shortcode runs after wp_head, so wp_head is too late).
+    add_action('wp_footer', function () use ($post_id, $css) {
+        echo '<style id="dwpicha-' . esc_attr($post_id) . '-css">' . $css . '</style>' . "\n";
+    }, 5);
+}
+
+/**
  * Convert a hex color to rgba() string.
  *
  * @param string $hex   Hex color (with or without #).

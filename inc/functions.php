@@ -104,12 +104,9 @@ add_action('wp_footer', function () {
     document.addEventListener('DOMContentLoaded', function () {
         var wrapper = document.querySelector('.dwpichaWrapper');
         if (!wrapper) return;
-        console.log('Wrapper class:', wrapper.className);
         var template = wrapper.querySelector('.dwpTemplate');
         if (!template) return;
         var styles = getComputedStyle(template);
-        console.log('--dwp-text:', styles.getPropertyValue('--dwp-text'));
-        console.log('--dwp-surface:', styles.getPropertyValue('--dwp-surface'));
     });
     </script>
     <?php
